@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Responses</title>
+</head>
+<body>
+    <h1>Feedback Responses</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Feedback</th>
+                <th>Complaint</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in feedback %}
+            <tr>
+                <td>{{ entry.name }}</td>
+
+                <td>{{ entry.email }}</td>
+
+                <td>{{ entry.feedback }}</td>
+                
+                <td>{{ entry.complaint }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

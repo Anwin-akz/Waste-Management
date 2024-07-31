@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Profile</title>
+    <style>
+        /* You can add CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            
+        }
+        header {
+            background-color: #373;
+            color: #fff;
+            padding: 5px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+        nav {
+            background-color: #788;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #400;
+            min-width: 160px;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Admin Profile</h1>
+</header>
+
+
+<nav>
+    <ul>
+         <li><a href="{{ url_for('Employee_Tasks') }}#">Employee Tasks</a></li>
+        <li><a href="{{ url_for('user_details') }}">User Details</a></li>
+        <li><a href="{{ url_for('responses') }}">Responses</a></li>
+        
+    </ul>
+</nav>
+
+<div class="container">
+    <!-- Use url_for to reference the image -->
+    <img src="{{ url_for('static', filename='real_image.png') }}" alt="Real Image" style="max-width: 100%; height: auto;">
+    <!-- Your content goes here -->
+</div>
+
+
+</body>
+</html>

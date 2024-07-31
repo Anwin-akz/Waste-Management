@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPDATE</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .data-section {
+            margin-bottom: 20px;
+        }
+        .data-section input[type="date"],
+        .data-section input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .data-section input[type="radio"] {
+            margin-right: 5px;
+        }
+        .data-section label {
+            margin-right: 15px;
+        }
+        .data-section button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .data-section button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 style="text-align: center;">UPDATE</h2>
+        <div class="data-section">
+            <form action="/submit" method="POST">
+                <div class="radio-label">
+                    <input type="radio" id="full" name="status" value="full">
+                    <label for="full">Full</label>
+                </div>
+                <div class="radio-label">
+                    <input type="radio" id="half" name="status" value="half">
+                    <label for="half">Half</label>
+                </div>
+                <div class="radio-label">
+                    <input type="radio" id="empty" name="status" value="empty">
+                    <label for="empty">Empty</label>
+                </div>
+                <label for="house-number">House Number:</label>
+                <input type="text" id="house-number" name="house_number" required>
+                <label for="ward-number">Ward Number:</label>
+                <input type="text" id="ward-number" name="ward_number" required>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

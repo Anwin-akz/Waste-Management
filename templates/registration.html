@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>waste management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: right;
+            align-items: left;
+            height: 100vh;
+            background-image: url('/static/real1.png');
+            background-size: cover;
+            background-position: right;
+        }
+
+        .main {
+            background-color: rgba(255, 255, 255, 0.8); /* To make it semi-transparent */
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 50px;
+            width: 300px;
+        }
+
+        .main h2 {
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button[type="submit"] {
+            padding: 15px;
+            border-radius: 10px;
+            border: none;
+            background-color: #7DDA58;
+            color: white;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .user-type {
+            margin-bottom: 15px;
+        }
+
+        .user-type label {
+            margin-right: 10px;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .login-link a {
+            color: #4caf50;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        function redirectToUserType(userType) {
+            var url;
+            if (userType === 'user') {
+                url = '/user';
+            } else if (userType === 'employee') {
+                url = '/employee';
+            } else if (userType === 'admin') {
+                url = '/admin';
+            } else {
+                console.error('Invalid user type.');
+                return;
+            }
+            window.location.href = url;
+        }
+
+        // Function to handle form submission
+        function submitForm() {
+            var userType = document.querySelector('input[name="user_type"]:checked').value;
+            // Set user type in localStorage (or sessionStorage if needed)
+            localStorage.setItem('userType', userType);
+            // Redirect based on user type
+            redirectToUserType(userType);
+        }
+    </script>
+</head>
+<body>
+    <div class="main">
+        <!-- Registration form -->
+        <h2>WASTE MANAGEMENT</h2>
+        <h2>LOGIN</h2>
+        <div class="user-type">
+            <label>
+                <input type="radio" name="user_type" value="user"> User
+                <input type="radio" name="user_type" value="employee"> Employee
+                <input type="radio" name="user_type" value="admin"> Admin
+            </label>
+        </div>
+        <form action="/login" method="post">
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Login</button>
+        <p>Don't have an account? <a href="/signup">Sign up</a></p>
+    </form>
+
+    </div>
+</body>
+</html>
+
+

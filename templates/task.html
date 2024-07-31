@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Profile</title>
+    <style>
+        /* You can add CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #373;
+            color: #fff;
+            padding: 5px;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+        nav {
+            background-color: #788;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #400;
+            min-width: 120px;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1></h1>
+</header>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+</head>
+<body>
+
+<header>
+    <h1>employee/tasks</h1>
+</header>
+
+
+
+<div class="container">
+    <h2>Tasks</h2>
+    <div>
+        <p>Here you can schedule tasks for employees:</p>
+        <form action="/schedule_task" method="post">
+            <label for="task-name">Task Name:</label><br>
+            <input type="text" id="task-name" name="task-name" required><br>
+            <label for="employee">Assign to Employee:</label><br>
+            <select id="employee" name="employee">
+                <option value="employee1">Employee 1</option>
+                <option value="employee2">Employee 2</option>
+                <option value="employee3">Employee 3</option>
+            </select><br>
+            <label for="due-date">Due Date:</label><br>
+            <input type="date" id="due-date" name="due-date" required><br><br>
+            <input type="submit" value="Schedule Task">
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
